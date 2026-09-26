@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 476" width="860" height="476" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13">
+<title>nacre command line demo</title>
+<style>
+.l{opacity:0;animation:show 0s linear forwards}
+.t{clip-path:inset(0 100% 0 0);animation:type steps(var(--n)) forwards}
+@keyframes show{to{opacity:1}}
+@keyframes type{to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){.l,.t{animation:none;opacity:1;clip-path:none}}
+</style>
+<rect width="860" height="476" rx="10" fill="#1b1a24"/>
+<circle cx="22" cy="20" r="6" fill="#ff5f57"/>
+<circle cx="42" cy="20" r="6" fill="#febc2e"/>
+<circle cx="62" cy="20" r="6" fill="#28c840"/>
+<text x="430" y="24" fill="#8a86a0" text-anchor="middle" font-size="12">nacre</text>
+<g class="l" style="animation-delay:0.40s"><text x="22" y="66" fill="#b7a6e0">$</text><text class="t" x="38" y="66" fill="#ecebf1" style="--n:12;animation-duration:0.42s;animation-delay:0.40s">nacre styles</text></g>
+<text class="l" x="38" y="87" fill="#a9a4b8" xml:space="preserve" style="animation-delay:1.32s">  blocks   Recursive golden-ratio subdivision into blocks, some plain, some hatched or dotted.</text>
+<text class="l" x="38" y="108" fill="#a9a4b8" xml:space="preserve" style="animation-delay:1.44s">  circles  Circle packing, coloured by a slow noise tide, as discs or nested rings.</text>
+<text class="l" x="38" y="129" fill="#a9a4b8" xml:space="preserve" style="animation-delay:1.56s">  contour  Topographic isolines of a domain-warped noise landscape.</text>
+<text class="l" x="38" y="150" fill="#a9a4b8" xml:space="preserve" style="animation-delay:1.68s">  flow     Particles traced through a layered noise field, as hairlines or ribbons.</text>
+<text class="l" x="38" y="171" fill="#a9a4b8" xml:space="preserve" style="animation-delay:1.80s">  ridges   Stacked noise horizons that hide one another, the way mountain ranges do.</text>
+<text class="l" x="38" y="192" fill="#a9a4b8" xml:space="preserve" style="animation-delay:1.92s">  truchet  Quarter-circle tiles at several scales that join into endless winding paths.</text>
+<g class="l" style="animation-delay:2.04s"><text x="22" y="213" fill="#b7a6e0">$</text><text class="t" x="38" y="213" fill="#ecebf1" style="--n:63;animation-duration:2.21s;animation-delay:2.04s">nacre render -style flow -seed 0x3f1a -palette dusk -o flow.png</text></g>
+<text class="l" x="38" y="234" fill="#ecebf1" xml:space="preserve" style="animation-delay:4.75s"><tspan fill="#f0a3c0">✦</tspan> flow  0x3f1a  dusk  2,109 shapes  → flow.png (1.1 MB)</text>
+<g class="l" style="animation-delay:4.87s"><text x="22" y="255" fill="#b7a6e0">$</text><text class="t" x="38" y="255" fill="#ecebf1" style="--n:39;animation-duration:1.37s;animation-delay:4.87s">nacre render -seed &#34;sea glass&#34; -animate</text></g>
+<text class="l" x="38" y="276" fill="#ecebf1" xml:space="preserve" style="animation-delay:6.73s"><tspan fill="#f0a3c0">✦</tspan> ridges  0xfcf009d496ccc2b8  dusk  92 shapes  → ridges-0xfcf009d496ccc2b8.svg (85 KB)</text>
+<g class="l" style="animation-delay:6.85s"><text x="22" y="297" fill="#b7a6e0">$</text><text class="t" x="38" y="297" fill="#ecebf1" style="--n:39;animation-duration:1.37s;animation-delay:6.85s">nacre gallery -seed 0x5eed -out gallery</text></g>
+<text class="l" x="38" y="318" fill="#ecebf1" xml:space="preserve" style="animation-delay:8.72s"><tspan fill="#f0a3c0">✦</tspan> gallery from seed 0x5eed → gallery</text>
+<text class="l" x="38" y="339" fill="#ecebf1" xml:space="preserve" style="animation-delay:8.84s"><tspan fill="#f0a3c0">✦</tspan> blocks  0xef33f17055244b74  tundra  20 shapes  → gallery/blocks-0xef33f17055244b74.svg (2 KB)</text>
+<text class="l" x="38" y="360" fill="#ecebf1" xml:space="preserve" style="animation-delay:8.96s"><tspan fill="#f0a3c0">✦</tspan> circles  0xe1f591112fb5051b  reef  676 shapes  → gallery/circles-0xe1f591112fb5051b.svg (75 KB)</text>
+<text class="l" x="38" y="381" fill="#ecebf1" xml:space="preserve" style="animation-delay:9.07s"><tspan fill="#f0a3c0">✦</tspan> contour  0xd8ab05640214863a  nacre  363 shapes  → gallery/contour-0xd8ab05640214863a.svg (130 KB)</text>
+<text class="l" x="38" y="402" fill="#ecebf1" xml:space="preserve" style="animation-delay:9.19s"><tspan fill="#f0a3c0">✦</tspan> flow  0xf985e1f2fb897b03  noir  1,410 shapes  → gallery/flow-0xf985e1f2fb897b03.svg (242 KB)</text>
+<text class="l" x="38" y="423" fill="#ecebf1" xml:space="preserve" style="animation-delay:9.31s"><tspan fill="#f0a3c0">✦</tspan> ridges  0xaf87a5f7e6ce1408  moss  82 shapes  → gallery/ridges-0xaf87a5f7e6ce1408.svg (49 KB)</text>
+<text class="l" x="38" y="444" fill="#ecebf1" xml:space="preserve" style="animation-delay:9.43s"><tspan fill="#f0a3c0">✦</tspan> truchet  0x86f28e3a0746ff9e  solar  464 shapes  → gallery/truchet-0x86f28e3a0746ff9e.svg (66 KB)</text>
+</svg>

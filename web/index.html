@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nacre playground</title>
+<meta name="description" content="Generative art from a seed. Pick a style and palette, share the link, download SVG or PNG.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23b7a6e0'/%3E%3Cstop offset='.5' stop-color='%23f0c3bf'/%3E%3Cstop offset='1' stop-color='%238fc4d8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='14' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="shell">
+  <section class="stage" aria-label="Artwork">
+    <figure class="frame" id="frame" aria-busy="true">
+      <img id="art" alt="" width="1200" height="1200">
+      <p class="loading" id="loading">Loading the engine…</p>
+    </figure>
+    <figcaption class="caption" id="caption"></figcaption>
+  </section>
+
+  <aside class="panel" aria-label="Controls">
+    <header class="brand">
+      <h1>nacre</h1>
+      <p>Generative art from a seed. The same seed always draws the same piece.</p>
+    </header>
+
+    <form class="seed" id="seed-form" autocomplete="off">
+      <label for="seed">Seed</label>
+      <div class="seed-row">
+        <input id="seed" name="seed" spellcheck="false" aria-describedby="seed-help">
+        <button type="submit" class="ghost">Draw</button>
+      </div>
+      <p id="seed-help" class="help">Hex, a number, or any words.</p>
+      <div class="seed-actions">
+        <button type="button" id="new-seed" class="primary">New seed</button>
+        <button type="button" id="shuffle" class="ghost">Shuffle everything</button>
+      </div>
+    </form>
+
+    <fieldset class="styles">
+      <legend>Style</legend>
+      <div class="style-grid" id="styles"></div>
+    </fieldset>
+
+    <fieldset class="palettes">
+      <legend>Palette</legend>
+      <div class="palette-list" id="palettes"></div>
+    </fieldset>
+
+    <div class="tweaks">
+      <label class="density" for="density">
+        <span>Density <output id="density-out">1.0</output></span>
+        <input type="range" id="density" min="0.3" max="2" step="0.1" value="1">
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="animate">
+        <span>Draw it in</span>
+      </label>
+    </div>
+
+    <div class="export">
+      <div class="export-buttons">
+        <button type="button" id="dl-svg" class="primary">Download SVG</button>
+        <button type="button" id="dl-png" class="ghost">Download PNG</button>
+        <button type="button" id="copy-link" class="ghost">Copy link</button>
+      </div>
+      <div class="cli">
+        <p>Same piece from the command line</p>
+        <div class="cli-row">
+          <code id="cli"></code>
+          <button type="button" id="copy-cli" class="ghost small">Copy</button>
+        </div>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </div>
+
+    <footer class="foot">
+      <p><kbd>N</kbd> new seed <kbd>←</kbd><kbd>→</kbd> history <kbd>S</kbd> save SVG</p>
+      <p><a href="https://github.com/devatobuild/nacre">Source on GitHub</a> <span id="version"></span></p>
+    </footer>
+  </aside>
+</main>
+<script src="wasm_exec.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
