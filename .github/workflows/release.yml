@@ -54,7 +54,7 @@ jobs:
           merge-multiple: true
       - name: checksums
         run: cd build && sha256sum * > checksums.txt && cat checksums.txt
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with:
           files: build/*
           generate_release_notes: true
