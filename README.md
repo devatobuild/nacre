@@ -77,7 +77,7 @@ go install github.com/devatobuild/nacre/cmd/nacre@latest
 
 ```sh
 nacre render                                         # a surprise, saved as <style>-<seed>.svg
-nacre render -style flow -seed 0x3f1a -palette dusk  # exactly the hero above
+nacre render -style flow -seed 0x3f1a -palette dusk  # the flow piece in the gallery
 nacre render -seed "sea glass" -animate              # strokes draw themselves in when opened
 nacre render -style contour -o map.png -scale 2      # 2400 × 2400 PNG
 nacre render -width 3000 -height 1000 -density 0.6   # any aspect ratio
@@ -143,7 +143,7 @@ Everything is written from scratch on the standard library.
 - **Randomness.** `Rand` is xoshiro256\*\* seeded through SplitMix64. `Render` forks three independent streams from the seed: one picks the style, one picks the palette, one draws. That is why fixing the palette by hand leaves the shapes alone.
 - **Noise.** The `noise` package implements 2D and 3D simplex noise, fractional Brownian motion and ridged multifractal noise.
 - **Canvas.** Styles draw paths and circles onto a resolution-independent canvas. Nothing is rasterized until you ask for it.
-- **SVG.** Paths are simplified with Ramer–Douglas–Peucker and written with trimmed precision, which keeps a 2,000-stroke flow field under 300 KB. The draw-in animation is pure CSS with `stroke-dashoffset`, so it plays inside a plain `<img>` tag, including on GitHub. It respects `prefers-reduced-motion`.
+- **SVG.** Paths are simplified with Ramer–Douglas–Peucker and written with trimmed precision, which keeps a 1,700-stroke flow field around 300 KB. The draw-in animation is pure CSS with `stroke-dashoffset`, so it plays inside a plain `<img>` tag, including on GitHub. It respects `prefers-reduced-motion`.
 - **PNG.** A small anti-aliased rasterizer. Strokes and circles use exact signed-distance coverage. Polygons use a non-zero-winding scanline fill with vertical supersampling and exact horizontal coverage. Each shape is accumulated into a coverage mask before blending, so translucent strokes never double up where their segments overlap.
 - **Contours.** Marching squares with saddle disambiguation. Cell segments are linked through shared edges into long polylines, so each isoline is one path rather than thousands of fragments.
 - **Playground.** The same Go code compiled to WebAssembly. The page keeps the seed, style and palette in the URL, so every piece has a link.

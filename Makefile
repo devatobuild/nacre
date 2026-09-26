@@ -32,7 +32,7 @@ gallery: build    ## re-render the README gallery
 	@ls docs/gallery
 
 hero: build       ## re-render the animated README hero
-	./bin/nacre render -style flow -seed 0x3f1a -palette dusk -width 1600 -height 700 -density 0.55 -animate -duration 7 -o docs/hero.svg
+	./bin/nacre render -style flow -seed 0x3f1a -palette dusk -width 1600 -height 640 -density 0.45 -simplify 0.8 -animate -duration 7 -o docs/hero.svg
 
 demo:             ## rebuild the terminal demo animation
 	go run ./hack/demo.go > docs/demo.svg
